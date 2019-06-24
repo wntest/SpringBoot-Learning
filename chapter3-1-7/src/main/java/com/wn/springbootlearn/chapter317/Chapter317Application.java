@@ -3,13 +3,13 @@ package com.wn.springbootlearn.chapter317;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 
@@ -23,13 +23,16 @@ public class Chapter317Application {
     @RestController
     class HelloController {
 
-        @RequestMapping("/user")
+        @PostMapping("/user")
         public UserDto hello(@RequestBody UserDto userDto) {
             return userDto;
         }
     }
 
-    class UserDto {
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    static class UserDto {
         private String userName;
         private LocalDate birthday;
     }
