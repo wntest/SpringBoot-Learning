@@ -1,0 +1,4 @@
+CREATE TABLE user (
+  name varchar(50) DEFAULT NULL COMMENT '姓名',
+  age int(3) DEFAULT NULL COMMENT '年龄'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
