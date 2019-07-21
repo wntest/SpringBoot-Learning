@@ -1,0 +1,19 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wnsql?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: wn
+    password: 1
+    driver-class-name: com.mysql.jdbc.Driver
+
+  jpa:
+    properties:
+      hibernate:
+        # 开启hibernate对sql语句的打印
+        show_sql: true
+#        hbm2ddl:
+#          # 根据Entity注解自动更新，创建，验证数据库表结构
+#          auto: update
+  cache:
+    ehcache:
+      # 配置ehcache的配置文件指定路径
+      config: config/ehcache.xml
