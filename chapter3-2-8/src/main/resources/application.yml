@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/wnsql?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=UTC
+    username: wn
+    password: 1
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+#    hibernate:
+#      ddl-auto: create-drop
+    properties:
+      hibernate:
+        # 打印hibernate 的sql日志
+        show_sql: true
+        hbm2ddl:
+          auto: create-drop
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  # redis 配置
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-idle: 8
+        min-idle: 0
+        max-active: 8
+        max-wait: -1
